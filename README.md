@@ -131,6 +131,6 @@ Implemented EEGNet-8,2 for efficient EEG classification using:
 # Goal
 
 The goal of this repository is to build efficient EEG-based Brain-Computer Interface systems using signal processing and deep learning techniques for:
-- Mental stress detection
+- Stress detection
 - Motor imagery classification
 

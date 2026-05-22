@@ -2,7 +2,7 @@
 
 This repository contains research and implementation work on Brain-Computer Interfaces (BCI) using Electroencephalography (EEG) signals. The project focuses on two major EEG applications:
 
-1. Mental Stress Detection using the SAM40 Dataset
+1. Stress Detection using the SAM40 Dataset
 2. Motor Imagery Classification using the BCI Competition IV 2a Dataset
 
 The repository combines EEG signal preprocessing, artifact removal, visualization, and deep learning-based classification pipelines using PyTorch and MNE-Python.
@@ -59,241 +59,60 @@ The repository includes:
 
 ---
 
-# 1. SAM40 Dataset Analysis
+# Projects Included
 
-## Objective
+## 1. SAM40 Dataset — Stress vs Relax Classification
 
-The goal of this project is to classify EEG recordings into:
+This project focuses on detecting mental stress using EEG signals.
 
-- Relax State
-- Stress State (Arithmetic Task)
-
-using signal processing and deep learning techniques.
-
----
-
-# Work Done on SAM40 Dataset
-
-## EEG Signal Cleaning
-
-Implemented a complete EEG preprocessing pipeline:
-
-### Bandpass Filtering
-- Applied a 4th-order Butterworth filter
-- Frequency range:
-  ```text
-  0.5 Hz – 40 Hz
-  ```
-
-### Artifact Removal using ICA
-- Used FastICA decomposition
-- Removed noisy EEG components automatically
-- Detected artifacts using Kurtosis thresholding
-
-### Output
-- Generated cleaned EEG `.mat` files
-- Saved processed files for further analysis
-
----
-
-## EEG Quality Validation
-
-Developed comparison tools to evaluate cleaning quality.
-
-### Metrics Used
-- Standard Deviation
-- Mean Channel STD
-- Peak Amplitude
-
-### Visualization
-- Created side-by-side bar chart comparisons
-- Compared Python-cleaned EEG with MATLAB-cleaned EEG
-
----
-
-## EEG Visualization
-
-Used MNE-Python for EEG signal inspection.
-
-### Features
-- Assigned standard 10-20 EEG channel names
-- Interactive multi-channel EEG plotting
-- Sampling frequency:
-  ```text
-  128 Hz
-  ```
-
----
-
-## Deep Learning Classification
-
-Implemented a complete stress classification pipeline using PyTorch.
-
-### Data Processing
-- Z-score normalization
+### Work Done
+- EEG preprocessing and cleaning
+- Bandpass filtering (0.5–40 Hz)
+- Artifact removal using ICA
+- EEG visualization using MNE
 - Sliding-window segmentation
-- Overlapping 2-second EEG windows
+- Stress vs Relax classification using ShallowConvNet (PyTorch)
 
----
+### Techniques Used
+- Mixup augmentation
+- Label smoothing
+- Weighted sampling
+- Cosine annealing scheduler
+- Stratified K-Fold validation
 
-## Model Used
-
-### ShallowConvNet
-
-Implemented a Shallow Convolutional Neural Network specialized for EEG signal analysis.
-
-The architecture includes:
-- Temporal convolutions
-- Spatial convolutions
-- EEG-specific feature extraction
-
----
-
-## Advanced Training Techniques
-
-Implemented several techniques to improve generalization:
-
-### Mixup Augmentation
-Blends EEG samples and labels during training.
-
-### Label Smoothing
-Prevents model overconfidence.
-
-### Weighted Sampling
-Handles class imbalance.
-
-### Cosine Annealing
-Improves learning rate scheduling.
-
----
-
-## Evaluation Metrics
-
-Used:
+### Evaluation Metrics
 - Accuracy
 - Balanced Accuracy
 - Macro F1-Score
 
-Validation performed using:
-
-```text
-Stratified K-Fold Cross Validation
-```
-
 ---
 
-# 2. Motor Imagery Classification
+## 2. Motor Imagery Classification — BCI Competition IV 2a
 
-## Objective
+This project focuses on classifying imagined motor movements using EEG signals.
 
-The goal of this project is to classify four motor imagery tasks using EEG signals:
-
+### Classes
 - Left Hand
 - Right Hand
 - Foot
 - Tongue
 
-using the BCI Competition IV 2a dataset.
+### Work Done
+- EEG preprocessing using MNE
+- EOG channel removal
+- Bandpass filtering (4–40 Hz)
+- Notch filtering (50 Hz)
+- Epoch extraction
+- EEGNet implementation in PyTorch
 
----
+### Model
+Implemented EEGNet-8,2 for efficient EEG classification using:
+- Depthwise convolutions
+- Separable convolutions
 
-# Work Done on Motor Imagery Dataset
-
-## EEG Preprocessing
-
-### Dataset Loading
-- Downloaded dataset automatically
-- Loaded EEG `.gdf` files using MNE-Python
-
----
-
-## Signal Cleaning
-
-### Removed EOG Channels
-Eliminated eye movement channels to reduce artifacts.
-
-### Bandpass Filtering
-Applied:
-```text
-4 Hz – 40 Hz
-```
-
-### Notch Filtering
-Removed powerline noise at:
-```text
-50 Hz
-```
-
----
-
-## Epoch Extraction
-
-Extracted EEG segments immediately after cue presentation.
-
-### Epoch Length
-```text
-4 Seconds
-```
-
----
-
-# EEGNet Implementation
-
-Implemented the EEGNet-8,2 architecture in PyTorch.
-
-EEGNet is a lightweight and highly efficient CNN architecture designed specifically for EEG signals.
-
----
-
-## EEGNet Features
-
-### Depthwise Convolutions
-Learns spatial EEG filters.
-
-### Separable Convolutions
-Learns temporal summaries efficiently.
-
-### Parameter Efficiency
-Provides strong performance with fewer trainable parameters.
-
----
-
-# Training and Evaluation
-
-## Train/Test Split
-```text
-90% Training
-10% Testing
-```
-
----
-
-## Training Configuration
-
-### Optimizer
-```text
-Adam
-```
-
-### Loss Function
-```text
-CrossEntropyLoss
-```
-
-### Epochs
-```text
-500
-```
-
----
-
-## Evaluation
-
-Generated:
+### Evaluation
 - Classification Accuracy
 - Confusion Matrix
-
-to evaluate prediction performance across all motor imagery classes.
 
 ---
 
@@ -309,49 +128,9 @@ to evaluate prediction performance across all motor imagery classes.
 
 ---
 
-# Skills Demonstrated
+# Goal
 
-This project demonstrates experience in:
+The goal of this repository is to build efficient EEG-based Brain-Computer Interface systems using signal processing and deep learning techniques for:
+- Mental stress detection
+- Motor imagery classification
 
-- EEG Signal Processing
-- Brain-Computer Interfaces
-- Deep Learning for EEG
-- Artifact Removal
-- Biomedical Signal Analysis
-- PyTorch Model Development
-- Time-Series Classification
-- Scientific Visualization
-- Data Preprocessing
-- Cross Validation Techniques
-
----
-
-# Future Improvements
-
-Potential future work includes:
-
-- Real-time EEG classification
-- Transformer-based EEG models
-- Attention mechanisms
-- Subject-independent training
-- Online BCI systems
-- EEG feature explainability
-
----
-
-# Conclusion
-
-This repository presents a complete end-to-end Brain-Computer Interface workflow covering:
-
-- EEG preprocessing
-- Signal cleaning
-- Visualization
-- Deep learning classification
-- Performance evaluation
-
-across two important EEG applications:
-
-1. Mental Stress Detection
-2. Motor Imagery Classification
-
-The project demonstrates how modern deep learning and signal processing techniques can be applied effectively to EEG-based Brain-Computer Interface systems.

@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="SVG - Neural chip / model icon" clip-path="url(#clip0_0_11)">
+<path id="Vector" d="M6 4H18C19.1038 4 20 4.89617 20 6V18C20 19.1038 19.1038 20 18 20H6C4.89617 20 4 19.1038 4 18V6C4 4.89617 4.89617 4 6 4V4" stroke-width="1.8" stroke="#22D3EE"/>
+<path id="Vector_2" d="M9 9H15V15H9V9" stroke-width="1.8" stroke-linecap="round" stroke="#22D3EE"/>
+<path id="Vector_3" d="M9 1V4M15 1V4M9 20V23M15 20V23M1 9H4M1 15H4M20 9H23M20 15H23" stroke-width="1.5" stroke-linecap="round" stroke="#22D3EE"/>
+</g>
+<defs>
+<clipPath id="clip0_0_11">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>

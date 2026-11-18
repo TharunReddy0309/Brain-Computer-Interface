@@ -2,7 +2,7 @@
 
 **Research Focus:** Non-invasive EEG-based BCI Systems — Affective State Decoding & Motor Imagery Classification  
 **B.Tech Project — Brain-Computer Interfaces**  
-**Author:** Raghuveer Karanam
+**BY** Tharun Reddy & Raghuveer Karanam
 
 ---
 
@@ -73,8 +73,8 @@ Input (B, 1, 32, 640)
 
 ### Project 2 — Motor Imagery Classification (Active BCI)
 
-> **Directory:** [`Motor_Imagery_Detection/`](./Motor_Imagery_Detection/)  
-> **Full Documentation:** [`Motor_Imagery_Detection/README.md`](./Motor_Imagery_Detection/README.md)
+> **Directory:** [`Motor_Imagery_Detection/`](./Intent_Detection/)  
+> **Full Documentation:** [`Motor_Imagery_Detection/README.md`](./Intent_Detection/README.md)
 
 Active BCIs translate voluntary cognitive intent — such as imagining moving a limb — into device commands. This system decodes four MI classes from EEG to enable non-muscular control of a motorised wheelchair, providing mobility assistance to patients with ALS, spinal cord injury, or locked-in syndrome.
 
